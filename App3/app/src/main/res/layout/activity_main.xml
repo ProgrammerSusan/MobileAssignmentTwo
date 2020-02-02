@@ -16,22 +16,32 @@
             android:layout_centerInParent="true"
             android:background="#000"/>
     </RelativeLayout>
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/colorheight"
         android:layout_weight="1"
-        android:background="#FF0000"/>
-
-    <TextView
+        android:background="#FF0000">
+        <SeekBar
+            android:id="@+id/redAmount"
+            style="@style/seekBarStyle" />
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/colorheight"
         android:layout_weight="1"
-        android:background="#00FF00" />
-
-    <TextView
+        android:background="#00FF00">
+        <SeekBar
+            android:id="@+id/greenAmount"
+            style="@style/seekBarStyle" />
+    </RelativeLayout>
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/colorheight"
         android:layout_weight="1"
-        android:background="#0000FF" />
+        android:background="#0000FF">
+        <SeekBar
+            android:id="@+id/blueAmount"
+            style="@style/seekBarStyle" />
+    </RelativeLayout>
 
 </LinearLayout>
