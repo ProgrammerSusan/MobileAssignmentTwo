@@ -13,15 +13,16 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/cellHeight"
             android:text="Programming Assignments (0-200)"
-            android:layout_margin="@dimen/cellMargin"
             android:padding="@dimen/cellPadding"
-            android:textAlignment="center"/>
+            android:background="@color/textBackground"
+            android:textAlignment="center"
+            android:textStyle="bold" />
 
         <EditText
             android:layout_width="@dimen/editWidth"
             android:layout_height="@dimen/cellHeight"
-            android:layout_margin="@dimen/cellMargin"
-            android:padding="@dimen/cellPadding" />
+            android:padding="@dimen/cellPadding"
+            android:background="@color/inputBackground"/>
 
     </TableRow>
 
