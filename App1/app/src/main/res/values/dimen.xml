@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="cellMargin">5dp</dimen>
+    <dimen name="editWidth">75dp</dimen>
+    <dimen name="cellHeight">30dp</dimen>
+    <dimen name="cellPadding">5dp</dimen>
+</resources>
