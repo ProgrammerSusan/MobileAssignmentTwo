@@ -11,19 +11,19 @@ public class GradeCalculator {
         this.finalScore = finalScore;
     }
 
-    public char calculateGrade(){
+    public String calculateGrade(){
         int grade = 60 * assignments / 200 + 20 * midterm / 100 + 20 * finalScore / 100;
         if(grade >= 90){
-            return 'A';
+            return "A";
         }
         else if(grade >= 80){
-            return 'B';
+            return "B";
         }
         else if(grade >= 70){
-            return 'C';
+            return "C";
         }
         else {
-            return 'D';
+            return "D";
         }
     }
 }

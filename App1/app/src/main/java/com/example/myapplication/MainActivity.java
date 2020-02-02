@@ -13,9 +13,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button calculate = (Button)findViewById(R.id.calculate);
+        ButtonHandler calculateButton = new ButtonHandler();
+        calculate.setOnClickListener(calculateButton);
     }
     
-    private class processInput implements  View.OnClickListener {
+    private class ButtonHandler implements  View.OnClickListener {
         
         @Override
         public void onClick(View v) {
@@ -78,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             if(validInput){
                 GradeCalculator grade = new GradeCalculator(assignmentsScore, midtermScore, finalScore);
                 TextView studentGrade = (TextView)findViewById(R.id.grade);
-                char gradeCalculation = grade.calculateGrade();
+                String gradeCalculation = grade.calculateGrade();
                 studentGrade.setText(gradeCalculation);
             }
         }
