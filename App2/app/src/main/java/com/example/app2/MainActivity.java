@@ -19,12 +19,14 @@ public class MainActivity extends AppCompatActivity {
         initialize();
     }
 
+    //initializing variables
     public static double price;
     public static boolean warranty, insurance;
     public static String delivery;
 
     public void calculate(View view)
     {
+        //pulling from xml and setting them to useful variables
         EditText p = (EditText) findViewById(R.id.price);
             String pr = p.getText().toString();
             price = Integer.parseInt(pr);
@@ -35,12 +37,15 @@ public class MainActivity extends AppCompatActivity {
         Spinner del = (Spinner) findViewById(R.id.del);
             delivery = del.getSelectedItem().toString();
         TextView cost = (TextView) findViewById(R.id.cost);
+        //pulling final cost from model and throwing it to view
             price = Calculator.cost(price);
             cost.setText(price+"");
     }
 
     public void initialize()
     {
+        //this was the only way I could think to get the spinner options up without re making
+        //them for every calculate button push
         Spinner delivery = (Spinner) findViewById(R.id.del);
         //heavy assistance from
         //https://developer.android.com/guide/topics/ui/controls/spinner#java

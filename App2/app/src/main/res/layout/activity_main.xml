@@ -15,6 +15,7 @@
         android:orientation="horizontal"
         android:gravity="center">
 
+        --all of the labels here
         <RelativeLayout
             android:id="@+id/r1"
             android:layout_width="match_parent"
@@ -82,6 +83,7 @@
 
         </RelativeLayout>
 
+        --all of the input bars here
         <RelativeLayout
             android:id="@+id/r2"
             android:layout_width="match_parent"
@@ -145,6 +147,7 @@
                 android:background="@color/colorAccent"/>
         </RelativeLayout>
     </LinearLayout>
+    --button under linear layout
     <Button
         android:id="@+id/calc"
         android:layout_width="wrap_content"

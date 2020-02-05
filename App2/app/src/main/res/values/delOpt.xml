@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    --this is the array to populate the spinner
     <string-array name="deliveryOptions">
         <item>Next Day</item>
         <item>Second Day</item>
