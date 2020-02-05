@@ -97,6 +97,7 @@
                 android:padding="15dp"
                 android:textSize="18dp"
                 android:hint="Price"
+                android:inputType="numberDecimal"
                 android:background="@color/colorAccent"/>
 
             <ToggleButton
