@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/linlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="60dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        --all of the labels here
+        <RelativeLayout
+            android:id="@+id/r1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/priceLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/warrLabel"
+                android:layout_below="@+id/priceLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Warranty"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/insLabel"
+                android:layout_below="@+id/warrLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Insurance"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/delLabel"
+                android:layout_below="@+id/insLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delivery"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:background="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/costLabel"
+                android:layout_below="@+id/delLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cost"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:background="@color/colorPrimary"/>
+
+        </RelativeLayout>
+
+        --all of the input bars here
+        <RelativeLayout
+            android:id="@+id/r2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:hint="Price"
+                android:inputType="numberDecimal"
+                android:background="@color/colorAccent"/>
+
+            <ToggleButton
+                android:id="@+id/warranty"
+                android:layout_below="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:background="@color/colorAccent"/>
+
+            <Switch
+                android:id="@+id/ins"
+                android:layout_below="@+id/warranty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:background="@color/colorAccent"/>
+
+            <Spinner
+                android:id="@+id/del"
+                android:layout_below="@+id/ins"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:spinnerMode="dropdown"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/cost"
+                android:layout_below="@+id/del"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:textSize="18dp"
+                android:hint="Cost"
+                android:background="@color/colorAccent"/>
+        </RelativeLayout>
+    </LinearLayout>
+    --button under linear layout
+    <Button
+        android:id="@+id/calc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/linlayout"
+        android:text="Calculate"
+        android:textSize="18dp"
+        android:onClick="calculate"/>
+</RelativeLayout>
