@@ -21,6 +21,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/colorheight"
+        android:orientation="horizontal"
         android:layout_weight="1"
         android:background="#FF0000">
         <SeekBar
@@ -59,6 +60,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/colorheight"
+        android:orientation="horizontal"
         android:layout_weight="1"
         android:background="#0000FF">
         <SeekBar
