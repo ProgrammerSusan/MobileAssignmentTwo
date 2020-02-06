@@ -155,6 +155,5 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/linlayout"
         android:text="Calculate"
-        android:textSize="18dp"
-        android:onClick="calculate"/>
+        android:textSize="18dp"/>
 </RelativeLayout>
