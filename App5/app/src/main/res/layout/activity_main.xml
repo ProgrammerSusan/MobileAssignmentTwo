@@ -7,22 +7,74 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     tools:context=".MainActivity">
-    <RelativeLayout
+
+<!--    layout for heading -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center" >
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guess a Number"
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="1 - 100"
+            android:textSize="15dp"/>
+    </LinearLayout>
 
-    </RelativeLayout>
-    <RelativeLayout
+<!--    Layout to Display remaining guesses -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guesses Remaining: " />
 
-    </RelativeLayout>
-    <RelativeLayout
+        <TextView
+            android:id="@+id/remainingGuess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8" />
+    </LinearLayout>
+
+<!--    layout area for submission-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1" >
-
-    </RelativeLayout>
+        android:layout_weight="2"
+        android:orientation="vertical"
+        android:gravity="top" >
+        <TextView
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
+            android:text="Guess a Number"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:hint="Guess" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="SUBMIT"/>
+    </LinearLayout>
 </LinearLayout>
