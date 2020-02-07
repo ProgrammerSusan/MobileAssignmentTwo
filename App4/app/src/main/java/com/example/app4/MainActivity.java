@@ -30,9 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //on click grab the input, operation, and output info
         String operation = Integer.toString(v.getId());
         TextView output = (TextView) findViewById(R.id.display);
-        numbers = output.getText().toString();
+        TextView input = (TextView) findViewById(R.id.numbers);
+        numbers = input.getText().toString();
 
-        display = "The "+Model.identify(operation)+" is "+sum; //+Model.calculate(operation, numbers);
+        display = "The "+Model.identify(operation)+" is "+Model.calculate(operation, numbers);
 
         output.setText(display);
     }

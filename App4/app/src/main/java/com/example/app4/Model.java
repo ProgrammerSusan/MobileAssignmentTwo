@@ -1,10 +1,11 @@
 package com.example.app4;
 
+import java.util.*;
+
 public class Model
 {
     //setting up variables
     public static double[] numbers;
-    public static String[] temp;
     //taking number string id's from controller
     public static String sum = MainActivity.sum;
     public static String mean = MainActivity.mean;
@@ -37,7 +38,8 @@ public class Model
     {
         //gets the string of input values from controller and creates a
         //double array with them so we can manipulate the data
-        temp = input.split(" ");
+        String[] temp = input.split(" ");
+        numbers = new double[temp.length];
         for (int i = 0; i < temp.length; i++)
         {
             numbers[i] = Double.parseDouble(temp[i]);
@@ -46,8 +48,60 @@ public class Model
 
     public static double calculate(String operation, String input)
     {
+        //setup
         double answer = 0;
-        identify(operation);
+        String method = identify(operation);
+        getValues(input);
+        //actual calculation
+        switch(method)
+        {
+            case "sum":
+                for(int i = 0; i < numbers.length; i++)
+                {
+                    answer = answer + numbers[i];
+                }
+                break;
+
+            case "mean":
+                for(int i = 0; i < numbers.length; i++)
+                {
+                    answer = answer + numbers[i];
+                }
+                answer = answer/numbers.length;
+                break;
+
+            case "median":
+                Arrays.sort(numbers);
+                answer = numbers[numbers.length/2];
+                break;
+
+            case "stdv":
+                //temp array
+                double[] temp = new double[numbers.length];
+                //sum of all values
+                for(int i = 0; i < numbers.length; i++)
+                    answer = answer + numbers[i];
+                //division of number of values
+                answer = answer/numbers.length;
+                for(int j = 0; j < numbers.length; j++)
+                    temp[j] = numbers[j]-answer;
+                //subtract mean from each value
+                for(int k = 0; k < numbers.length; k++)
+                    answer = answer + temp[k];
+                //square root the average of those means
+                answer = Math.sqrt(answer/numbers.length);
+                break;
+
+            case "min":
+                Arrays.sort(numbers);
+                answer = numbers[0];
+                break;
+
+            case "max":
+                Arrays.sort(numbers);
+                answer = numbers[numbers.length-1];
+                break;
+        }
         return answer;
     }
 }
