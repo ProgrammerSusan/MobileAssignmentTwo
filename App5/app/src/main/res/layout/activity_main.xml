@@ -66,6 +66,7 @@
             android:layout_marginBottom="50dp"
             android:text="Guess a Number"/>
         <EditText
+            android:id="@+id/response"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -75,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="SUBMIT"/>
+            android:text="SUBMIT"
+            android:onClick="check"/>
     </LinearLayout>
 </LinearLayout>
