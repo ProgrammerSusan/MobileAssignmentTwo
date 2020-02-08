@@ -4,13 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     public static boolean warranty, insurance;
     public static String delivery;
 
-    public void calculate(View view)
+    public void onClick(View v)
     {
         //pulling from xml and setting them to useful variables
         EditText p = (EditText) findViewById(R.id.price);
@@ -55,5 +56,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         delivery.setAdapter(adapter);
         //end assistance
+        Button calc = (Button) findViewById(R.id.calc);
+        calc.setOnClickListener(this);
     }
 }

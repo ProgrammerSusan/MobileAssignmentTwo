@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="100dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Numbers"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:textSize="18dp"
+        android:textAlignment="center"
+        android:padding="15dp"/>
+
+    <EditText
+        android:id="@+id/numbers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/instructions"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent"
+        android:textSize="18dp"
+        android:padding="15dp"/>
+
+    <GridLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:rowCount="3"
+        android:columnCount="2"
+        android:layout_below="@+id/numbers">
+
+        <Button
+            android:id="@+id/sum"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="SUM"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:padding="15dp"/>
+
+        <Button
+            android:id="@+id/mean"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="MEAN"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:padding="15dp"/>
+
+        <Button
+            android:id="@+id/med"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="MEDIAN"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:padding="15dp"/>
+
+        <Button
+            android:id="@+id/sd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="STDV"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:padding="15dp"/>
+
+        <Button
+            android:id="@+id/min"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="MIN"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:padding="15dp"/>
+
+        <Button
+            android:id="@+id/max"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="MAX"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="18dp"
+            android:padding="15dp"/>
+
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/display"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttons"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent"
+        android:textSize="18dp"
+        android:padding="15dp"/>
+
+</RelativeLayout>
