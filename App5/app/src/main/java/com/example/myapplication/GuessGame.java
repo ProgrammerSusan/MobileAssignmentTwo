@@ -30,4 +30,10 @@ public class GuessGame {
     public int getGuesses(){
         return guesses;
     }
+
+    public void newGame(){
+        Random r = new Random();
+        answer = r.nextInt(100) + 1;
+        guesses = 8;
+    }
 }
