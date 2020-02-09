@@ -47,6 +47,7 @@
             android:id="@+id/remainingGuess"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#FF8888"
             android:text="8" />
     </LinearLayout>
 
