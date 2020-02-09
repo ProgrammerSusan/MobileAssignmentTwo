@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity
     {
         public void onClick(View v)
         {
+            //set up interfaces to input and output
             EditText inp = (EditText) findViewById(Interface.inputID);
             TextView output = (TextView) findViewById((Interface.outputID));
+            //get info from input, throw to model, post in output
             String in = inp.getText().toString();
             int number = Integer.parseInt(in);
             if (Model.isPrime(number))
