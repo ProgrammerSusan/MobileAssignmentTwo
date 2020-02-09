@@ -81,7 +81,8 @@ public class MainActivity extends AppCompatActivity {
             if(validInput){
                 GradeCalculator grade = new GradeCalculator(assignmentsScore, midtermScore, finalScore);
                 TextView studentGrade = (TextView)findViewById(R.id.grade);
-                String gradeCalculation = grade.calculateGrade();
+                int score = grade.finalScore();
+                String gradeCalculation = grade.calculateGrade(score);
                 studentGrade.setText(gradeCalculation);
             }
         }

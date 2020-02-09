@@ -11,8 +11,11 @@ public class GradeCalculator {
         this.finalScore = finalScore;
     }
 
-    public String calculateGrade(){
-        int grade = 60 * assignments / 200 + 20 * midterm / 100 + 20 * finalScore / 100;
+    public int finalScore(){
+        return 60 * assignments / 200 + 20 * midterm / 100 + 20 * finalScore / 100;
+    }
+
+    public String calculateGrade(int grade){
         if(grade >= 90){
             return "A";
         }

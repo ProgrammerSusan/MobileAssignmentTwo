@@ -7,5 +7,18 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <style name="firstColumn" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/cellHeight</item>
+        <item name="android:background">@color/textBackground</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="secondColumn" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:background">@color/inputBackground</item>
+    </style>
 
 </resources>

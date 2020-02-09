@@ -15,53 +15,32 @@
         <TableRow>
             <TextView
                 android:id="@+id/program"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/cellHeight"
-                android:text="Programming Assignments (0-200)"
-                android:padding="@dimen/cellPadding"
-                android:background="@color/textBackground"
-                android:textAlignment="center"
-                android:textStyle="bold" />
+                style="@style/firstColumn"
+                android:text="Programming Assignments (0-200)" />
 
             <EditText
                 android:id="@+id/programScore"
-                android:layout_width="@dimen/editWidth"
-                android:layout_height="@dimen/cellHeight"
-                android:background="@color/inputBackground"/>
+                style="@style/secondColumn" />
         </TableRow>
         <TableRow>
             <TextView
                 android:id="@+id/midterm"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/cellHeight"
-                android:text="Midterm Exam (0-100)"
-                android:padding="@dimen/cellPadding"
-                android:background="@color/textBackground"
-                android:textAlignment="center"
-                android:textStyle="bold" />
+                style="@style/firstColumn"
+                android:text="Midterm Exam (0-100)" />
 
             <EditText
                 android:id="@+id/midtermScore"
-                android:layout_width="@dimen/editWidth"
-                android:layout_height="@dimen/cellHeight"
-                android:background="@color/inputBackground"/>
+                style="@style/secondColumn" />
         </TableRow>
         <TableRow>
             <TextView
                 android:id="@+id/finalExam"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/cellHeight"
-                android:text="Final Exam (0-100)"
-                android:padding="@dimen/cellPadding"
-                android:background="@color/textBackground"
-                android:textAlignment="center"
-                android:textStyle="bold" />
+                style="@style/firstColumn"
+                android:text="Final Exam (0-100)" />
 
             <EditText
                 android:id="@+id/finalScore"
-                android:layout_width="@dimen/editWidth"
-                android:layout_height="@dimen/cellHeight"
-                android:background="@color/inputBackground"/>
+                style="@style/secondColumn" />
         </TableRow>
         <!--    Bar Styling-->
         <TableRow>
@@ -91,7 +70,25 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/cellHeight"
-                android:background="@color/textBackground" />
+                android:background="@color/textBackground"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="Final Score"/>
+
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cellHeight"
+                android:background="#FFDDDD" />
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cellHeight"
+                android:background="@color/textBackground"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:text="Final Grade"/>
 
             <TextView
                 android:id="@+id/grade"
