@@ -1,4 +1,4 @@
-package cosc426.program;
+package com.example.myapplication;
 
 import java.util.Random;
 
