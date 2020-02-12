@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Sudoku
 {
-    public int[][] generate()
+    public static int[][] generate()
     {
         Random rand = new Random();
 
@@ -41,7 +41,7 @@ public class Sudoku
         return board;
     }
 
-    private boolean fill(int[][] board, int[][][] order, int location)
+    private static boolean fill(int[][] board, int[][][] order, int location)
     {
         int x = location/9;
         int y = location%9;
@@ -64,7 +64,7 @@ public class Sudoku
         }
     }
 
-    private boolean check(int[][] board, int x, int y)
+    private static boolean check(int[][] board, int x, int y)
     {
         int a, b, i, j;
         

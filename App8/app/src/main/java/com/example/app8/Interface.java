@@ -2,23 +2,20 @@ package com.example.app8;
 
 import android.graphics.Color;
 import android.os.Build;
-import android.text.InputType;
 import android.widget.*;
-import android.widget.RelativeLayout;
 import android.view.*;
 import android.content.*;
-import android.util.*;
 import androidx.annotation.RequiresApi;
 
 
 public class Interface extends GridLayout
 {
     private int size;
-    private Button[][] buttons;
+    private static EditText[][] box;
     private TextView status;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public Interface(Context context, int size, int width, View.OnClickListener textHandler)
+    public Interface(Context context, int size, int width)
     {
         super(context);
 
@@ -26,17 +23,27 @@ public class Interface extends GridLayout
         setRowCount(size);
         setColumnCount(size);
 
-        buttons = new Button[size][size];
+        //getting board info from blackbox
+        int[][] board = Model.makeboard();
+
+        //setup and population of board
+        box = new EditText[size][size];
         for(int i = 0; i<size;i++)
         {
             for(int j = 0; j<size; j++)
             {
-                buttons[i][j] = new Button(context);
-                buttons[i][j].setBackgroundColor(Color.parseColor("#E0E4E3"));
-                buttons[i][j].setTextColor(Color.parseColor("#000000"));
-                buttons[i][j].setTextSize((int)(size*0.2));
-                buttons[i][j].setGravity(Gravity.CENTER);
-                buttons[i][j].setOnClickListener(textHandler);
+                box[i][j] = new EditText(context);
+                if(board[i][j]==0)
+                    box[i][j].setBackgroundColor(Color.parseColor("#E0E4E3"));
+                else
+                {
+                    box[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
+                    box[i][j].setText(board[i][j]+"");
+                    box[i][j].setEnabled(false);
+                }
+                box[i][j].setTextColor(Color.parseColor("#000000"));
+                box[i][j].setTextSize((int)(size*2));
+                box[i][j].setGravity(Gravity.CENTER);
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
                 params.width = width;
                 params.height = width;
@@ -44,9 +51,22 @@ public class Interface extends GridLayout
                 params.columnSpec = GridLayout.spec(j, 1);
                 params.topMargin = params.bottomMargin = 1;
                 params.leftMargin = params.rightMargin = 1;
-                buttons[i][j].setLayoutParams(params);
-                addView(buttons[i][j]);
+                box[i][j].setLayoutParams(params);
+                addView(box[i][j]);
             }
         }
+    }
+
+    //to clear a board space
+    public void clear(int x, int y)
+    {
+        Model.setBoard(x,y,0);
+        box[x][y].setText("");
+    }
+
+    //method called from controller to get the handlers attached
+    public static void setHandler(int n, int p, MainActivity.TextChangeHandler handler)
+    {
+        box[n][p].addTextChangedListener(handler);
     }
 }
