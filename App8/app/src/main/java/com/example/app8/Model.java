@@ -15,7 +15,7 @@ public class Model
         board[x][y] = e;
     }
 
-    public boolean isValid(int x, int y, int e)
+    public static boolean isValid(int x, int y, int e)
     {
         //cannibalized from blackbox code
         for (int j = 0; j < 9; j++)

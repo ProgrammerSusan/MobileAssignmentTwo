@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.graphics.*;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.*;
 import android.view.View;
 import android.widget.*;
 
@@ -65,9 +66,38 @@ public class MainActivity extends AppCompatActivity
         {
             int xcoord = x;
             int ycoord = y;
-            int input = Integer.parseInt(e.toString());
+            String in = e.toString();
+            int input;
 
             //error handling
+            try
+            {
+                input = Integer.parseInt(in);
+            }
+            catch (NumberFormatException p)
+            {
+                input = 0;
+                Log.d("Debugger",p+"");
+            }
+
+            Log.d("Debugger",in);
+            Log.d("Debugger",input+"");
+            if (in=="")
+                Model.setBoard(x, y, 0);
+            else if (input>9)
+                e.clear();
+            else if (input == 0)
+            {
+                e.clear();
+                Model.setBoard(x, y, 0);
+            }
+            else if(Model.isValid(x,y,input))
+                Model.setBoard(x, y, input);
+            else
+            {
+                Model.setBoard(x, y, 0);
+                e.clear();
+            }
         }
     }
 }
