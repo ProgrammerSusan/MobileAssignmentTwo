@@ -13,19 +13,22 @@ public class Interface extends GridLayout
 {
     private int size;
     private static EditText[][] box;
-    private TextView status;
+    public static int dispId = 0;
+    public static int[][] board;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public Interface(Context context, int size, int width)
     {
         super(context);
 
+        final int dp = (int)(getResources().getDisplayMetrics().density);
+
         this.size = 9;
-        setRowCount(size);
+        setRowCount(size+1);
         setColumnCount(size);
 
         //getting board info from blackbox
-        int[][] board = Model.makeboard();
+         board = Model.makeboard();
 
         //setup and population of board
         box = new EditText[size][size];
@@ -56,6 +59,24 @@ public class Interface extends GridLayout
                 addView(box[i][j]);
             }
         }
+
+        TextView display = new TextView(context);
+        display.setId(TextView.generateViewId());
+        dispId = display.getId();
+        display.setTextColor(Color.parseColor("#000000"));
+        display.setTextSize(TypedValue.COMPLEX_UNIT_SP,18);
+        display.setPadding(15*dp, 15*dp, 15*dp, 15*dp);
+        display.setBackgroundColor(Color.parseColor("#B5AEC4"));
+        GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+        params.width = width*size;
+        params.height = LayoutParams.WRAP_CONTENT;
+        params.rowSpec = GridLayout.spec(size,1);
+        params.columnSpec = GridLayout.spec(0, size);
+        params.topMargin = params.bottomMargin = 1;
+        params.leftMargin = params.rightMargin = 1;
+        display.setLayoutParams(params);
+        addView(display);
+
     }
 
     //to clear a board space
@@ -73,5 +94,23 @@ public class Interface extends GridLayout
         //Log.d("Debugger","Y is "+ p);
         //Log.d("Debugger",""+box[n][p].getText().toString());
         box[n][p].addTextChangedListener(handler);
+    }
+
+    //to see if the game is won
+    public static boolean isSolved()
+    {
+        boolean solved = true;
+        for(int i = 0; i < 9; i++)
+        {
+            for(int j = 0; j<9; j++)
+            {
+                if (board[i][j] == 0)
+                {
+                    solved = false;
+                    break;
+                }
+            }
+        }
+        return solved;
     }
 }

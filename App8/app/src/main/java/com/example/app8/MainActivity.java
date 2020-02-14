@@ -98,6 +98,14 @@ public class MainActivity extends AppCompatActivity
                 Model.setBoard(x, y, 0);
                 e.clear();
             }
+
+            //check if solved
+            if(Interface.isSolved())
+            {
+                int ID = Interface.dispId;
+                TextView output = (TextView) findViewById(ID);
+                output.setText("You've Won!");
+            }
         }
     }
 }
