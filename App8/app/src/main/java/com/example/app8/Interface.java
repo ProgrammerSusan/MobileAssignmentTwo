@@ -3,6 +3,7 @@ package com.example.app8;
 import android.graphics.Color;
 import android.os.Build;
 import android.widget.*;
+import android.util.*;
 import android.view.*;
 import android.content.*;
 import androidx.annotation.RequiresApi;
@@ -67,6 +68,9 @@ public class Interface extends GridLayout
     //method called from controller to get the handlers attached
     public static void setHandler(int n, int p, MainActivity.TextChangeHandler handler)
     {
+        //Log.d("Debugger","X is "+ n);
+        //Log.d("Debugger","Y is "+ p);
+        //Log.d("Debugger",""+box[n][p].getText().toString());
         box[n][p].addTextChangedListener(handler);
     }
 }

@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity
         getWindowManager().getDefaultDisplay().getSize(screenSize);
         int width = screenSize.x/9;
 
+        ainterface = new Interface(this, 9, width);
+
         //dispersing all 81 listeners
         for(int i = 0; i < 9; i++)
         {
@@ -39,7 +41,6 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-        ainterface = new Interface(this, 9, width);
 
         setContentView(ainterface);
 
