@@ -80,12 +80,12 @@ public class Interface extends GridLayout
     }
 
     //to clear a board space
-    public static void clear(int x, int y)
-    {
-        Model.setBoard(x,y,0);
+    //public static void clear(int x, int y)
+    //{
+        //Model.setBoard(x,y,0);
         //Log.d("Debugger",box[x][y].getText().toString());
-        box[x][y].getText().clear();
-    }
+        //box[x][y].getText().clear();
+    //}
 
     //method called from controller to get the handlers attached
     public static void setHandler(int n, int p, MainActivity.TextChangeHandler handler)

@@ -80,8 +80,8 @@ public class MainActivity extends AppCompatActivity
                 Log.d("Debugger",p+"");
             }
 
-            Log.d("Debugger",in);
-            Log.d("Debugger",input+"");
+            //Log.d("Debugger",in);
+            //Log.d("Debugger",input+"");
             if (in=="")
                 Model.setBoard(x, y, 0);
             else if (input>9)
