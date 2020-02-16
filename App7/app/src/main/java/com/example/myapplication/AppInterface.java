@@ -18,9 +18,8 @@ class AppInterface extends GridLayout{
     private Button up, down, right, left;
     private int upId, downId, rightId, leftId;
 
-
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public AppInterface(Context context, View.OnClickListener buttonHandler, Slide slider)
+    public AppInterface(Context context, View.OnClickListener buttonHandler)
     {
         super(context);
 
@@ -32,16 +31,11 @@ class AppInterface extends GridLayout{
         setRowCount(size + 1);
         setColumnCount(size);
 
-        //Get boards from slider
-            char[][] initial = slider.generateInitialBoard();
-            char[][] mission = slider.generateGoalBoard();
-
         //create first board in a grid
             board = new TextView[size][size];
             for(int i = 0; i < size; i++){
                 for(int j = 0; j < size; j++){
                     board[i][j] = new TextView(context);
-                    board[i][j].setText(initial[i][j]);
                     board[i][j].setTextSize((int)(size*2));
                     board[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
                     board[i][j].setGravity(Gravity.CENTER);
@@ -63,7 +57,6 @@ class AppInterface extends GridLayout{
             for(int i = 0; i < size; i++){
                 for(int j = 0; j < size; j++){
                     goal[i][j] = new TextView(context);
-                    goal[i][j].setText(mission[i][j]);
                     goal[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
                     goal[i][j].setGravity(Gravity.CENTER);
                     GridLayout.LayoutParams params = new GridLayout.LayoutParams();
@@ -96,12 +89,21 @@ class AppInterface extends GridLayout{
     public void drawBoard(char[][] board)
     {
         //draw current board
-
+        for(int i = 0; i < board.length; i++){
+            for(int j = 0; j < board.length; j++){
+                this.board[i][j].setText(board[i][j]);
+            }
+        }
     }
 
     public void drawGoal(char[][] goal)
     {
         //draw goal board
+        for(int i = 0; i < goal.length; i++){
+            for(int j = 0; j < goal.length; j++){
+                this.goal[i][j].setText(goal[i][j]);
+            }
+        }
     }
 
     public int findButton(Button button)
