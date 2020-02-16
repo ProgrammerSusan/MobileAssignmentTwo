@@ -14,7 +14,9 @@ import static android.graphics.Color.*;
 class AppInterface extends GridLayout{
     private TextView[][] board;
     private TextView[][] goal;
+    private int size, width;
     private Button up, down, right, left;
+    private int upId, downId, rightId, leftId;
 
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
@@ -22,8 +24,8 @@ class AppInterface extends GridLayout{
     {
         super(context);
 
-        int size = 3;
-        int width = 50;
+        this.size = 3;
+        this.width = 50;
 
         final int dp = (int)(getResources().getDisplayMetrics().density);
         width = width * dp;
@@ -40,6 +42,7 @@ class AppInterface extends GridLayout{
                 for(int j = 0; j < size; j++){
                     board[i][j] = new TextView(context);
                     board[i][j].setText(initial[i][j]);
+                    board[i][j].setTextSize((int)(size*2));
                     board[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
                     board[i][j].setGravity(Gravity.CENTER);
                     GridLayout.LayoutParams params = new GridLayout.LayoutParams();
@@ -76,11 +79,24 @@ class AppInterface extends GridLayout{
                 }
         }
         //create four buttons, attach event handler
+            up = new Button(context);
+            up.setId(Button.generateViewId());
+            this.upId = up.getId();
+            down = new Button(context);
+            down.setId(Button.generateViewId());
+            this.downId = down.getId();
+            left = new Button(context);
+            left.setId(Button.generateViewId());
+            this.leftId = left.getId();
+            right = new Button(context);
+            right.setId(Button.generateViewId());
+            this.rightId = right.getId();
     }
 
     public void drawBoard(char[][] board)
     {
         //draw current board
+
     }
 
     public void drawGoal(char[][] goal)
