@@ -42,6 +42,7 @@ class Game {
             char temp = board[x - 1][y];
             board[x - 1][y] = ' ';
             board[x][y] = temp;
+            x--;
         }
     }
 
@@ -52,6 +53,7 @@ class Game {
             char temp = board[x + 1][y];
             board[x + 1][y] = ' ';
             board[x][y] = temp;
+            x++;
         }
     }
 
@@ -62,6 +64,7 @@ class Game {
             char temp = board[x][y + 1];
             board[x][y + 1] = ' ';
             board[x][y] = temp;
+            y++;
         }
     }
 
@@ -72,6 +75,7 @@ class Game {
             char temp = board[x][y - 1];
             board[x][y - 1] = ' ';
             board[x][y] = temp;
+            y--;
         }
     }
 }

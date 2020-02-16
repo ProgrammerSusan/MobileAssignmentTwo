@@ -58,14 +58,14 @@ class AppInterface extends GridLayout{
                     goal[i][j] = new TextView(context);
                     goal[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
                     goal[i][j].setGravity(Gravity.CENTER);
-                    GridLayout.LayoutParams params = new GridLayout.LayoutParams();
-                    params.width = width;
-                    params.height = width;
-                    params.rowSpec = GridLayout.spec(i,1);
-                    params.columnSpec = GridLayout.spec(j, 1);
-                    params.topMargin = params.bottomMargin = 1;
-                    params.leftMargin = params.rightMargin = 1;
-                    goal[i][j].setLayoutParams(params);
+                    GridLayout.LayoutParams parameters = new GridLayout.LayoutParams();
+//                    parameters.width = width;
+//                    parameters.height = width;
+                    parameters.rowSpec = GridLayout.spec(i,1);
+                    parameters.columnSpec = GridLayout.spec(j, 1);
+                    parameters.topMargin = parameters.bottomMargin = 1;
+                    parameters.leftMargin = parameters.rightMargin = 1;
+                    goal[i][j].setLayoutParams(parameters);
                     addView(goal[i][j]);
 
                 }
