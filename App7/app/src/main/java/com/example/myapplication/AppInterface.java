@@ -23,7 +23,7 @@ class AppInterface extends GridLayout{
         super(context);
 
         this.size = 3;
-        this.width = 50;
+        this.width = 60;
 
         final int dp = (int)(getResources().getDisplayMetrics().density);
         width = width * dp;
@@ -74,15 +74,19 @@ class AppInterface extends GridLayout{
             up = new Button(context);
             up.setId(Button.generateViewId());
             up.setOnClickListener(buttonHandler);
+            up.setText("UP");
             down = new Button(context);
             down.setId(Button.generateViewId());
             down.setOnClickListener(buttonHandler);
+            down.setText("DOWN");
             left = new Button(context);
             left.setId(Button.generateViewId());
             left.setOnClickListener(buttonHandler);
+            left.setText("LEFT");
             right = new Button(context);
             right.setId(Button.generateViewId());
             right.setOnClickListener(buttonHandler);
+            right.setText("RIGHT");
             addView(up);
             addView(down);
             addView(left);

@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         //draw initial and goal board
             appInterface.drawBoard(game.getBoard());
             appInterface.drawGoal(game.getGoal());
+            setContentView(appInterface);
     }
 
     public class ButtonHandler implements Button.OnClickListener
