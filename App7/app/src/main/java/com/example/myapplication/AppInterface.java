@@ -89,22 +89,22 @@ class AppInterface extends GridLayout{
             addView(right);
     }
 
-    public void drawBoard(char[][] board)
+    public void drawBoard(char[][] game)
     {
         //draw current board
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board.length; j++){
-                this.board[i][j].setText(board[i][j]);
+                board[i][j].setText(String.valueOf(game[i][j]));
             }
         }
     }
 
-    public void drawGoal(char[][] goal)
+    public void drawGoal(char[][] game)
     {
         //draw goal board
         for(int i = 0; i < goal.length; i++){
             for(int j = 0; j < goal.length; j++){
-                this.goal[i][j].setText(goal[i][j]);
+                goal[i][j].setText(String.valueOf(game[i][j]));
             }
         }
     }
