@@ -8,8 +8,7 @@ class Game {
     private char[][] board;
     private char[][] goal;
     private int x, y;
-    private int [] blank;
-
+    
     public Game()
     {
         //create Slide object
@@ -43,20 +42,40 @@ class Game {
     public void up()
     {
         //move blank up
+        if(x != 0){
+            char temp = board[x - 1][y];
+            board[x - 1][y] = ' ';
+            board[x][y] = temp;
+        }
     }
 
     public void down()
     {
         //move blank down
+        if(x != 2){
+            char temp = board[x + 1][y];
+            board[x + 1][y] = ' ';
+            board[x][y] = temp;
+        }
     }
 
     public void right()
     {
         //move blank right
+        if(y != 2){
+            char temp = board[x][y + 1];
+            board[x][y + 1] = ' ';
+            board[x][y] = temp;
+        }
     }
 
     public void left()
     {
         //move blank left
+        if(y != 0){
+            char temp = board[x][y - 1];
+            board[x][y - 1] = ' ';
+            board[x][y] = temp;
+        }
     }
 }
