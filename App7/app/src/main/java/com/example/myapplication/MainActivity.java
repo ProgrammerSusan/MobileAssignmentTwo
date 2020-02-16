@@ -6,7 +6,7 @@ import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
     private Game game;
@@ -33,10 +33,23 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view)
         {
             //find out which button was clicked
-
+                Button clicked = (Button) findViewById(view.getId());
+                int found = appInterface.findButton(clicked);
             //make move in the board
-
+                if(found == 1){
+                    game.up();
+                }
+                else if(found == 2){
+                    game.down();
+                }
+                else if(found == 3){
+                    game.right();
+                }
+                else{
+                    game.left();
+                }
             //draw updated board
+                appInterface.drawBoard(game.getBoard());
         }
     }
 }
