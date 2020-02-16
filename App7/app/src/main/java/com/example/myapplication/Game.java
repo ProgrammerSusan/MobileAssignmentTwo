@@ -9,16 +9,23 @@ class Game {
     private char[][] goal;
     private int x, y;
     private int [] blank;
-    private int size;
 
-    public Game(int size)
+    public Game()
     {
-        this.size = size;
         //create Slide object
             Slide slider = new Slide();
         //create initial and goal boards
-
+            board = slider.generateInitialBoard();
+            goal = slider.generateGoalBoard();
         //determine the location of blank
+            for(int i = 0; i < board.length; i++){
+                for(int j = 0; j < board.length; j++){
+                    if(board[i][j] == ' '){
+                        x = i;
+                        y = j;
+                    }
+                }
+            }
     }
 
     public char[][] getBoard()
@@ -36,9 +43,6 @@ class Game {
     public void up()
     {
         //move blank up
-        if(blank[1] != 0){
-
-        }
     }
 
     public void down()

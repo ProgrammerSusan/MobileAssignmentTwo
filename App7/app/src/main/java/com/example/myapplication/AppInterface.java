@@ -16,7 +16,6 @@ class AppInterface extends GridLayout{
     private TextView[][] goal;
     private int size, width;
     private Button up, down, right, left;
-    private int upId, downId, rightId, leftId;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public AppInterface(Context context, View.OnClickListener buttonHandler)
@@ -74,16 +73,12 @@ class AppInterface extends GridLayout{
         //create four buttons, attach event handler
             up = new Button(context);
             up.setId(Button.generateViewId());
-            this.upId = up.getId();
             down = new Button(context);
             down.setId(Button.generateViewId());
-            this.downId = down.getId();
             left = new Button(context);
             left.setId(Button.generateViewId());
-            this.leftId = left.getId();
             right = new Button(context);
             right.setId(Button.generateViewId());
-            this.rightId = right.getId();
     }
 
     public void drawBoard(char[][] board)

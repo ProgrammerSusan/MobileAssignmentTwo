@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         //create game
             game = new Game(SIZE);
         //create interface
-            AppInterface ui = new AppInterface()
+            AppInterface ui = new AppInterface(this, button);
         //draw initial and goal board
     }
 
