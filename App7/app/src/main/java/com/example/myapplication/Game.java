@@ -8,7 +8,7 @@ class Game {
     public Game()
     {
         //create Slide object
-
+            Slide slider = new Slide();
         //create initial and goal boards
 
         //determine the location of blank

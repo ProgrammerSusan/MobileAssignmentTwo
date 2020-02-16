@@ -1,26 +1,78 @@
 package com.example.myapplication;
 
-import android.view.Gravity;
-import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-import android.graphics.Color;
+import android.os.Build;
+import android.view.*;
+import android.widget.*;
+import android.graphics.*;
 import android.content.Context;
-import android.view.View;
-import android.widget.GridLayout;
 import android.util.TypedValue;
 
-class AppInterface {
+import androidx.annotation.RequiresApi;
+
+import static android.graphics.Color.*;
+
+class AppInterface extends GridLayout{
     private TextView[][] board;
     private TextView[][] goal;
     private Button up, down, right, left;
 
-    public AppInterface(Context context, View.OnClickListener buttonHandler)
+
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
+    public AppInterface(Context context, View.OnClickListener buttonHandler, Slide slider)
     {
+        super(context);
+
+        int size = 3;
+        int width = 50;
+
+        setRowCount(size + 1);
+        setColumnCount(size);
+
+        //Get boards from slider
+            char[][] initial = slider.generateInitialBoard();
+            char[][] mission = slider.generateGoalBoard();
+
         //create first board in a grid
+            board = new TextView[size][size];
+            for(int i = 0; i < size; i++){
+                for(int j = 0; j < size; j++){
+                    board[i][j] = new TextView(context);
+                    board[i][j].setText(initial[i][j]);
+                    board[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
+                    board[i][j].setGravity(Gravity.CENTER);
+                    GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                    params.width = width;
+                    params.height = width;
+                    params.rowSpec = GridLayout.spec(i,1);
+                    params.columnSpec = GridLayout.spec(j, 1);
+                    params.topMargin = params.bottomMargin = 1;
+                    params.leftMargin = params.rightMargin = 1;
+                    board[i][j].setLayoutParams(params);
+                    addView(board[i][j]);
+
+                }
+            }
 
         //create second board in a grid
+            goal = new TextView[size][size];
+            for(int i = 0; i < size; i++){
+                for(int j = 0; j < size; j++){
+                    goal[i][j] = new TextView(context);
+                    goal[i][j].setText(mission[i][j]);
+                    goal[i][j].setBackgroundColor(Color.parseColor("#AEC4C0"));
+                    goal[i][j].setGravity(Gravity.CENTER);
+                    GridLayout.LayoutParams params = new GridLayout.LayoutParams();
+                    params.width = width;
+                    params.height = width;
+                    params.rowSpec = GridLayout.spec(i,1);
+                    params.columnSpec = GridLayout.spec(j, 1);
+                    params.topMargin = params.bottomMargin = 1;
+                    params.leftMargin = params.rightMargin = 1;
+                    goal[i][j].setLayoutParams(params);
+                    addView(goal[i][j]);
 
+                }
+        }
         //create four buttons, attach event handler
     }
 
