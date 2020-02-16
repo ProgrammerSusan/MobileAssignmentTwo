@@ -73,12 +73,16 @@ class AppInterface extends GridLayout{
         //create four buttons, attach event handler
             up = new Button(context);
             up.setId(Button.generateViewId());
+            up.setOnClickListener(buttonHandler);
             down = new Button(context);
             down.setId(Button.generateViewId());
+            down.setOnClickListener(buttonHandler);
             left = new Button(context);
             left.setId(Button.generateViewId());
+            left.setOnClickListener(buttonHandler);
             right = new Button(context);
             right.setId(Button.generateViewId());
+            right.setOnClickListener(buttonHandler);
     }
 
     public void drawBoard(char[][] board)

@@ -1,14 +1,10 @@
 package com.example.myapplication;
 
-import android.view.View;
-import android.widget.GridLayout;
-import android.content.Context;
-
 class Game {
     private char[][] board;
     private char[][] goal;
     private int x, y;
-    
+
     public Game()
     {
         //create Slide object

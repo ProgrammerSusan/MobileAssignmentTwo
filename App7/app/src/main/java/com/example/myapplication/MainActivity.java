@@ -10,7 +10,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Game game;
-    private final int SIZE = 3;
     private AppInterface appInterface;
 
     protected void onCreate(Bundle savedInstanceState)
@@ -18,14 +17,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Point screenSize = new Point();
         getWindowManager().getDefaultDisplay().getSize(screenSize);
-        int width = screenSize.x/SIZE;
         //create event handler
         ButtonHandler button = new ButtonHandler();
         //create game
-            game = new Game(SIZE);
+            game = new Game();
         //create interface
-            AppInterface ui = new AppInterface(this, button);
+            appInterface = new AppInterface(this, button);
         //draw initial and goal board
+            appInterface.drawBoard(game.getBoard());
+            appInterface.drawGoal(game.getGoal());
     }
 
     public class ButtonHandler implements Button.OnClickListener
