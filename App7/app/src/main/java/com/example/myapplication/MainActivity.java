@@ -2,7 +2,6 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.View;
