@@ -25,6 +25,8 @@ class AppInterface extends GridLayout{
         int size = 3;
         int width = 50;
 
+        final int dp = (int)(getResources().getDisplayMetrics().density);
+        width = width * dp;
         setRowCount(size + 1);
         setColumnCount(size);
 

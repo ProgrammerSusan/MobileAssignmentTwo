@@ -1,16 +1,21 @@
 package com.example.myapplication;
 
-class Game {
+import android.view.View;
+import android.widget.GridLayout;
+import android.content.Context;
+
+class Game extends GridLayout {
     private char[][] board;
     private char[][] goal;
     private int x, y;
 
-    public Game()
+    public Game(Context context, View.OnClickListener buttonHandler)
     {
+        super(context);
         //create Slide object
             Slide slider = new Slide();
         //create initial and goal boards
-
+            AppInterface board = new AppInterface(context, buttonHandler, slider);
         //determine the location of blank
     }
 
