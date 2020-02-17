@@ -74,7 +74,7 @@ class AppInterface extends GridLayout{
         //create four buttons, attach event handler
             GridLayout.LayoutParams upP = new GridLayout.LayoutParams();
             upP.rowSpec = GridLayout.spec(7,1);
-            upP.columnSpec = GridLayout.spec(5,1);
+            upP.columnSpec = GridLayout.spec(8,1);
             up = new Button(context);
             up.setId(Button.generateViewId());
             up.setOnClickListener(buttonHandler);
@@ -101,7 +101,7 @@ class AppInterface extends GridLayout{
             left.setText("LEFT");
             GridLayout.LayoutParams rightP = new GridLayout.LayoutParams();
             rightP.rowSpec = GridLayout.spec(8, 1);
-            rightP.columnSpec = GridLayout.spec(5,1);
+            rightP.columnSpec = GridLayout.spec(8,1);
             right = new Button(context);
             right.setId(Button.generateViewId());
             right.setOnClickListener(buttonHandler);
